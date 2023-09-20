@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid #e7e7e7;
+            text-align: center;
+            margin: 20px;
+        }
+        td:hover{
+            background-color:slategray;
+        }
+
+        body{
+            background-color: #1c1c1c;
+            color: #fff;
+            display: flex;
+            align-items: center;
+
+        }
+        #table{
+            /* border: 5px solid; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+        }
+        #heading{
+            border: 5px solid;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="table">
+    <h1 id="heading">Press a key and see the magic</h1>
+    </div>
+</body>
+<script>
+    const table=document.getElementById('table')
+    window.addEventListener('keydown',(e)=>{
+        console.log(e.key);
+        table.innerHTML = `
+        <div>
+        <table>
+            <tr>
+                <th>KEY</th>
+                <th>CODE</th>
+                <th>KEYCODE</th>
+            </tr>
+            <tr>
+                <td>${e.key ==' ' ? 'Space' : e.key}</td>
+                <td>${e.code}</td>
+                <td>${e.keyCode}</td>
+            </tr>
+        </table>
+    </div>
+    `;
+    })
+</script>
+</html>
